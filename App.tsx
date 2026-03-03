@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const printRef = useRef<HTMLDivElement>(null);
 
   // Check for API Key presence for UI feedback only
-  const hasApiKey = !!process.env.API_KEY;
+  const hasApiKey = !!process.env.GEMINI_API_KEY;
 
   // Update document title based on SOP title for better PDF filenames
   useEffect(() => {

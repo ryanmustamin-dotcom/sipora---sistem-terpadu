@@ -17,9 +17,9 @@ export const generateSOPContent = async (
   topic: string, 
   description: string
 ): Promise<Partial<SOPData> | null> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error("API Key is missing in process.env.API_KEY");
+    console.error("API Key is missing in process.env.GEMINI_API_KEY");
     return null;
   }
 
