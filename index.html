@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIPORA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+      }
+      /* Print specific styles to match A4 paper and exact table formatting */
+      @media print {
+        @page {
+          size: A4 landscape;
+          margin: 10mm; /* Moderate margin for the printer/PDF */
+        }
+        html, body, #root {
+          height: auto !important;
+          min-height: 0 !important;
+          overflow: visible !important;
+          background-color: white !important;
+        }
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .print-container {
+          width: 100% !important;
+          max-width: none !important;
+          box-shadow: none !important;
+          padding: 0 !important; /* Let @page handle margins */
+          margin: 0 !important;
+          border: none !important;
+        }
+        /* Ensure table borders and backgrounds print correctly */
+        table, td, th {
+          border-color: black !important;
+          border-width: 1px !important;
+        }
+        /* Updated to New Palette Blue #1C4D8D */
+        .header-bg {
+          background-color: #1C4D8D !important; 
+          color: white !important;
+        }
+        .header-bg-light {
+          background-color: #BDE8F5 !important; 
+        }
+        /* Page break handling */
+        tr {
+          page-break-inside: avoid;
+        }
+        thead {
+          display: table-header-group; 
+        }
+        /* Hide scrollbars in print */
+        ::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
